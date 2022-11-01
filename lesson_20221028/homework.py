@@ -15,6 +15,7 @@
 from rich.console import Console
 from rich.panel import Panel
 
+rc = Console()
 rule_style = 'bold white on blue'
 success = 'bold green'
 warning = 'bold yellow'
@@ -23,7 +24,6 @@ lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 0.256, 3.566, 
 lst2 = []
 
 while True:
-    rc = Console()
     rc.print(Panel(' - press 1 to get the letter of index\n'
                    ' - press 2 to get the count of words\n'
                    ' - press 3 to get the list of numbers\n'
