@@ -36,6 +36,7 @@ while True:
         continue
 
     if chosen_value == '0':
+        rc.print('[bold white on green]Thank you for using out application. Have a nice day![/bold white on green]')
         break
 
     # ex.1
