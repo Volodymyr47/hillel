@@ -42,7 +42,7 @@ while True:
     # ex.1
     if chosen_value == '1':
         vowel_letters = ['a', 'e', 'i', 'o', 'u']
-        word_list = input('Write down your text (word(s), sentence, large text): ').split()
+        word_list = input('Write down your text (word(s), sentence, large text): ').lower().split()
         count_of_words = 0
 
         for word in word_list:
