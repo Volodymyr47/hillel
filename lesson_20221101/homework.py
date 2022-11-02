@@ -65,12 +65,18 @@ while True:
                          }
         upper_limit = lower_limit = 0.0
         result = ''
+
         try:
             lower_limit = float(rc.input('Please, input [bold blue]lower limit[/bold blue] for price (e.g. 0.123): '))
             upper_limit = float(rc.input('Please, input [bold blue]upper limit[/bold blue] for price (e.g. 41.456): '))
         except Exception as err:
             rc.print(f'We got an incorrect value(s) of lover or upper limit. '
                      f'Please, be careful next time', style=danger)
+            continue
+
+        if lower_limit > upper_limit:
+            rc.print(f'Lower limit of "{lower_limit}" is greater of upper limit "{upper_limit}". '
+                  f'No result will be found. Please, be careful next time!', style=warning)
             continue
 
         for item in shops_prices.items():
