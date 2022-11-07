@@ -1,0 +1,23 @@
+{
+  "astronauts_url":           "http://api.open-notify.org/astros.json",
+  "weather_url":              "https://api.openweathermap.org/data/2.5/weather?q={city}&appid=47503e85fabbabc93cff28c52398ae97&units=metric",
+  "success":                  "bold green",
+  "warning":                  "bold yellow",
+  "danger":                   "bold red",
+  "greating_title":           "Homework 5. 04.11.2022",
+  "greating_and_choice":      "Welcome!\nPlease, select what you have to do:\n- press [bold green]1[/bold green] to get names of all astronauts in orbit\n- press [bold green]2[/bold green] to get weather in the city\n- press [bold green]0[/bold green] to exit",
+  "choice_answer":            "Enter your number only. Default value is 1",
+  "By_by":                    "[bold green blink]Thank you for choose our app. Have a nice day![/bold green blink]\n",
+
+  "ex1_greating":             "[bold green]We present you information about astronauts in orbit today, {today}.[/bold green]",
+  "ex1_ask_part_num":         "Please, enter\n- [bold blue]1[/bold blue] (default value) to get full information\n- [bold blue]2[/bold blue] to get names only\nEnter [bold red]0[/bold red] to exit this app.\nYour selection",
+  "ex1_rule":                 "[bold on blue]Astronauts, who's are in orbit right now[/bold on blue]",
+
+  "ex2_greating":             "[bold black on green]You have opened the weather app.[/bold black on green]",
+  "ex2_ask_city":             "[bold blue]Please, write down name of city to get the weather, like: lviv, kyiv, etc.[/bold blue] ([bold red]0[/bold red] - exit)",
+  "ex2_wrong_city_val":       "You have entered wrong value of city. Please, be careful next time",
+  "ex2_weather_part_choice":  "- enter [bold blue]1[/bold blue] to get all weather data\n- enter [bold blue]2[/bold blue] to get only information about [bold]temperature and wind[/bold],\n([italic]Enter [bold red]0[/bold red] to exit weather application[/italic])\n",
+  "ex2_ask_for_choice":       "[bold green]Please, make your choice.[/bold green]\n([italic]By default, all data will displayed.[/italic])",
+  "ex2_ask_another_city":     "\n[bold blue underline]Repeat entering for check another city[/bold blue underline]"
+
+}
