@@ -12,6 +12,7 @@
   "ex1_greating":             "[bold green]We present you information about astronauts in orbit today, {today}.[/bold green]",
   "ex1_ask_part_num":         "Please, enter\n- [bold blue]1[/bold blue] (default value) to get full information\n- [bold blue]2[/bold blue] to get names only\nEnter [bold red]0[/bold red] to exit this app.\nYour selection",
   "ex1_rule":                 "[bold on blue]Astronauts, who's are in orbit right now[/bold on blue]",
+  "ex1_ask_change_selection": "\n[bold underline]If you want to change your selection,[/bold underline]",
 
   "ex2_greating":             "[bold black on green]You have opened the weather app.[/bold black on green]",
   "ex2_ask_city":             "[bold blue]Please, write down name of city to get the weather, like: lviv, kyiv, etc.[/bold blue] ([bold red]0[/bold red] - exit)",

@@ -76,6 +76,7 @@ while True:
                     rc.print(tabulate(result_list, headers='keys', tablefmt='grid'),
                              style='bold white on rgb(12,153,28)'
                              )
+                rc.print(value_of['ex1_ask_change_selection'])
     # ex. 2
     else:
         rc.print(value_of['ex2_greating'])
