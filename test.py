@@ -1,24 +1,25 @@
+def operation_with_arguments(arg1, arg2):
 
-from rich.console import Console
-from rich.panel import Panel
-import json
+    # try:
+    #     arg1 = float(arg1)
+    # except ValueError:
+    #     pass
+    #
+    # try:
+    #     arg2 = float(arg2)
+    # except ValueError:
+    #     pass
+
+    if isinstance(arg1, (int, float)) and isinstance(arg2, (int, float)):
+        return f'multiplication {arg1 * arg2}'
+
+    if isinstance(arg1, str) and isinstance(arg2, str):
+        return f'concatenation {arg1 + arg2}'
+    else:
+        return f'The result is tuple: {(arg1, arg2)}'
+
+# a = input('arg1 = ')
+# b = input('arg2 = ')
 
 
-# def get_json_params(key):
-try:
-    with open('lesson_20221104/config.json', 'r', encoding='utf_8') as config:
-        params = json.load(config)
-except Exception as err:
-    print(f'Error in "get_json_params": message > {err}')
-    # return params[key]
-
-
-print(params.get('test'))
-
-rc = Console()
-
-weather_url = 'https://api.openweathermap.org/data/2.5/weather?q=' \
-              '{city}&appid=47503e85fabbabc93cff28c52398ae97&units=metric'
-
-# asd = input('Input city: ')
-# print(weather_url.format(city=asd))
+print(operation_with_arguments(['qwe',123],(123, 2, 3)))
