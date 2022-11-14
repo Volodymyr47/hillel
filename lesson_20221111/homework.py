@@ -44,8 +44,7 @@ def get_pc_figure():
 
 
 def create_score(player_1, player_2=socket.gethostname().capitalize()):
-    if not player_1:
-        player_1 = 'Player'
+
     return {player_1: 0,
             player_2: 0}
 
@@ -173,8 +172,8 @@ def run_game():
     '''
     rc.print(Panel(const.GREETING, title=const.GREETING_TITLE), style='bold green')
     save_to_log(datetime.now().strftime('%d.%m.%Y %H:%m')+'\n')
-    player_name = rc.input(const.ASK_PLAYER_NAME).capitalize()
-    scores = create_score(player_name)
+    player_name = rc.input(const.ASK_PLAYER_NAME).capitalize() or 'Player'
+    scores = create_score(player_1=player_name)
 
     iterations_count = 3        # for three iterations by default
 
