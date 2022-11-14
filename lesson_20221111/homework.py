@@ -43,7 +43,7 @@ def get_pc_figure():
     return ai_figure
 
 
-def create_score(player_1 = 'Player', player_2=socket.gethostname().capitalize()):
+def create_score(player_1, player_2=socket.gethostname().capitalize()):
     if not player_1:
         player_1 = 'Player'
     return {player_1: 0,
