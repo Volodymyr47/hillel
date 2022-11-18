@@ -185,7 +185,7 @@ def run_game():
                      iterations=iterations_count)
     update_score = update_players_scores(scores)
     winner = get_winner(general_scores=update_score)
-    save_to_log(f'We have a {const.WINNER_TITLE}\nNew winner is {winner}')
+    save_to_log(f'We have a {const.WINNER_TITLE}: {winner}')
     return winner
     # rc.print('\n', Panel(winner, title=const.WINNER_TITLE),
     #          style=const.SUCCESS_STYLE)
