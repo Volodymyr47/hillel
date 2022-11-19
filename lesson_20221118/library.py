@@ -9,7 +9,7 @@ import constants as const
 rc = Console()
 
 
-def get_player_figure():
+def get_player_figure(rules):
     '''
     No input param.
     function return a chosen figure by player. There are only three figures to select.
@@ -19,26 +19,23 @@ def get_player_figure():
 
     Returns: str
     '''
-    player_figure = Prompt.ask('\nChoose your figure',
-                               choices=['1', '2', '3'],
-                               show_choices=False
-                               )
-    if player_figure == '1':
-        return 'rock'
-    if player_figure == '2':
-        return 'scissors'
-    return 'paper'
+    player_figure = int(Prompt.ask('\nChoose your figure',
+                                   choices=['1', '2', '3'],
+                                   show_choices=False
+                                   ))
+    return list(rules.keys())[player_figure - 1]
 
 
-def get_pc_figure():
+def get_pc_figure(rules):
     '''
     No input param.
     function return a chosen figure by PC (random value). There are only three figures to select.
     Returns:
 
     '''
-    ai_figure = random.choice(['rock', 'scissors', 'paper'])
-    return ai_figure
+    # ai_figure = random.choice(['rock', 'scissors', 'paper']).upper()
+    pc_figure = random.choice(list(rules.keys()))
+    return pc_figure
 
 
 def create_score(player_1, player_2=socket.gethostname().capitalize()):
@@ -76,6 +73,22 @@ def get_player_name(scores, i = 0):
     return list(scores.keys())[i]
 
 
+def get_count_iterations():
+    '''
+    Function is without input parameters.
+    Asks user and returns count of game iterations. If user didn't enter any value, func return three (3) by default
+
+    Returns: int (count of iterations)
+    '''
+
+    iterations_count = 3
+    try:
+        iterations_count = int(rc.input(const.ASK_COUNT_ITERATION))
+    except:
+        rc.print(const.EXCEPTION_MASSAGE, style='red')
+
+    return iterations_count
+
 def save_to_log(data):
     '''
     Function writes log in file games.
@@ -104,13 +117,13 @@ def get_game_results(rules, scores, iterations = 3):
 
     '''
 
-    player_1 = get_player_name(scores, 0)           # for get players names
+    player_1 = get_player_name(scores, 0)                               # for get players names
     player_2 = get_player_name(scores, 1)
 
-    player_1_chose = get_player_figure()            # for get players selection
-    player_2_chose = get_pc_figure()
+    player_1_chose = get_player_figure(rules=rules)                                # for get players selection
+    player_2_chose = get_pc_figure(rules=rules)
 
-    save_to_log(f'iteration {iterations}\n'         # add players and selections to log-file
+    save_to_log(f'iteration {iterations}\n'                             # add players and selections to log-file
                 f' - {player_1}: {player_1_chose}\n'
                 f' - {player_2}: {player_2_chose}\n\n'
                 )
@@ -161,31 +174,23 @@ def get_winner(general_scores):
     return 'The result is a draw'
 
 
-def run_game():
+def run_game(player_name):
     '''
     Application launch function.
     Does not accept or return any parameters or values
     Returns: nothing
 
     '''
-    rc.print(Panel(const.GREETING, title=const.GREETING_TITLE), style='bold green')
+    # rc.print(Panel(const.GREETING.format(player=player_name), title=const.GREETING_TITLE), style='bold green')
     save_to_log(datetime.now().strftime('%d.%m.%Y %H:%m')+'\n')
-    player_name = rc.input(const.ASK_PLAYER_NAME).capitalize() or 'Player'
+    # player_name = rc.input(const.ASK_PLAYER_NAME).capitalize() or 'Player'
     scores = create_score(player_1=player_name)
-
-    iterations_count = 3        # for three iterations by default
-
-    try:
-        iterations_count = int(rc.input(const.ASK_COUNT_ITERATION))
-    except:
-        rc.print(const.EXCEPTION_MASSAGE, style= 'red')
+    count_of_iterations = get_count_iterations()
 
     get_game_results(rules=const.RULE_OF_GAMES,
                      scores=scores,
-                     iterations=iterations_count)
+                     iterations=count_of_iterations)
     update_score = update_players_scores(scores)
     winner = get_winner(general_scores=update_score)
-    save_to_log(f'We have a {const.WINNER_TITLE}: {winner}')
+    save_to_log(f'We have a {const.WINNER_TITLE}: {winner} \n\n')
     return winner
-    # rc.print('\n', Panel(winner, title=const.WINNER_TITLE),
-    #          style=const.SUCCESS_STYLE)
