@@ -33,7 +33,7 @@ def get_pc_figure(rules):
     Returns:
 
     '''
-    # ai_figure = random.choice(['rock', 'scissors', 'paper']).upper()
+
     pc_figure = random.choice(list(rules.keys()))
     return pc_figure
 
@@ -89,6 +89,7 @@ def get_count_iterations():
 
     return iterations_count
 
+
 def save_to_log(data):
     '''
     Function writes log in file games.
@@ -96,7 +97,7 @@ def save_to_log(data):
     Args:
         data: str
 
-    Returns: nothing
+    Returns: None
 
     '''
     with open(const.LOG_FILE, 'a') as log:
@@ -113,7 +114,7 @@ def get_game_results(rules, scores, iterations = 3):
         scores: dict of general scores
         iterations: count of game iteration
 
-    Returns: nothing
+    Returns: None
 
     '''
 
@@ -181,9 +182,8 @@ def run_game(player_name):
     Returns: nothing
 
     '''
-    # rc.print(Panel(const.GREETING.format(player=player_name), title=const.GREETING_TITLE), style='bold green')
+
     save_to_log(datetime.now().strftime('%d.%m.%Y %H:%m')+'\n')
-    # player_name = rc.input(const.ASK_PLAYER_NAME).capitalize() or 'Player'
     scores = create_score(player_1=player_name)
     count_of_iterations = get_count_iterations()
 
@@ -193,4 +193,5 @@ def run_game(player_name):
     update_score = update_players_scores(scores)
     winner = get_winner(general_scores=update_score)
     save_to_log(f'We have a {const.WINNER_TITLE}: {winner} \n\n')
+
     return winner
