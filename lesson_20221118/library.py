@@ -33,7 +33,7 @@ def get_pc_figure(rules):
     Returns:
 
     '''
-    # ai_figure = random.choice(['rock', 'scissors', 'paper']).upper()
+    
     pc_figure = random.choice(list(rules.keys()))
     return pc_figure
 
@@ -181,9 +181,8 @@ def run_game(player_name):
     Returns: nothing
 
     '''
-    # rc.print(Panel(const.GREETING.format(player=player_name), title=const.GREETING_TITLE), style='bold green')
+
     save_to_log(datetime.now().strftime('%d.%m.%Y %H:%m')+'\n')
-    # player_name = rc.input(const.ASK_PLAYER_NAME).capitalize() or 'Player'
     scores = create_score(player_1=player_name)
     count_of_iterations = get_count_iterations()
 
