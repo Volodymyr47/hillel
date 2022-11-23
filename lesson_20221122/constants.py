@@ -43,4 +43,7 @@ RULE_OF_GAMES = {'ROCK': 'SCISSORS',
                  'PAPER': 'ROCK'
                  }
 
+# for decoreator
+TIME_DIIFERENCE_TEXT = '[italic]The game lasted [bold green]{difference} {spelling_time}[/bold green][italic]'
+
 

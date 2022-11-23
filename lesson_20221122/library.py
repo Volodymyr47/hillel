@@ -19,7 +19,7 @@ def time_counter_decorator(function):
         difference = (finish - start).seconds
         spelling_time = 'seconds' if difference > 1 else 'second'
         rc.print(f'\n',
-                 Panel.fit(f'[italic]The game lasted [bold green]{difference} {spelling_time}[/bold green][italic]'),
+                 Panel.fit(const.TIME_DIIFERENCE_TEXT.format(difference=difference, spelling_time=spelling_time)),
                  style=const.WARNING_STYLE)
         return result
 
