@@ -1,4 +1,4 @@
-# Rock Scissors Paper
+# "Rock Scissors Paper"
 
 from rich.console import Console
 from rich.panel import Panel

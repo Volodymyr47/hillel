@@ -144,7 +144,6 @@ def get_game_results(rules, score, iterations=3):
                 f' - {player_1}: {player_1_chose}\n'
                 f' - {player_2}: {player_2_chose}\n\n'
                 )
-
     if player_1_chose == player_2_chose:
         rc.print(Panel.fit(f'Your chosen is [bold]{player_1_chose}[/bold]\n'
                            f'PC chosen is [bold]{player_2_chose}[/bold]', title=const.TITLE_STEP),
@@ -158,7 +157,6 @@ def get_game_results(rules, score, iterations=3):
                            f'PC chosen is [bold]{player_2_chose}[/bold]', title=const.TITLE_STEP),
                  style=const.SUCCESS_STYLE
                  )
-
     if rules.get(player_2_chose) == player_1_chose:
         update_players_score(score=score, player_name=player_2)  # call the function to update a
         # general result for player_2
