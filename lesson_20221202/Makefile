@@ -9,5 +9,5 @@ check:
 	flake8 --ignore=E501 homework.py
 	flake8 --ignore=E501 vehicle.py
 
-run: setup check
+run: check
 	python homework.py
