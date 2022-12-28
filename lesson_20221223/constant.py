@@ -16,7 +16,8 @@ GREATING_TEXT = '[green bold]Hello!\n' \
                 '   dd_mm_yyyy,\n' \
                 '   yyyy_mm_dd,\n' \
                 '   mm/dd/yyyy\n' \
-                '   dd/mm/yyyy[/white]\n\n' \
+                '   dd/mm/yyyy[/white]\n' \
+                '([bold yellow]or enter [bold red]exit[/bold red] to exit[/bold yellow])\n\n' \
                 'Your result will be saved in the file dd_mm_yyyy.txt, where dd_mm_yyyy is the date of your input.'
 
 INPUT_REQUEST = '[bold blue]Enter the date or leave this field blank and press "Enter": [/bold blue]'
